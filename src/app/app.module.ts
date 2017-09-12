@@ -1,4 +1,3 @@
-import { CiresonApiService } from './cireson-api.service';
 import { AppRoutingModule } from './app.routing.module';
 import { CommentService } from './comment.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +23,7 @@ import { AnalystCommentResultsComponent } from './analyst-comment-results/analys
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [CommentService, CiresonApiService],
+  providers: [CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

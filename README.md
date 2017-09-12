@@ -14,13 +14,19 @@ NOTE: The command above assumes the source code / project is in the `c:\Source\C
 
 ## Installation
 
-To install the example, run the SQL script that is in the _install folder against the ServiceManagement database. Then copy the views folder from the _install directory into your CustomSpace folders root (it may ask to overwrite the existing folder, but it won't overwrite the files in the folder). Finally, copy the CustomSearch folder from the install.zip to your CustomSpace folders root. This will install the latest compiled version of the code.
+To install the example, run the SQL script that is in the _install folder against the ServiceManagement database. 
+
+Then copy the views folder from the _install directory into your CustomSpace folders root (it may ask to overwrite the existing folder, but it won't overwrite the files in the folder).
+
+Next, you need to create a navigation node in the Portal to point to the new custom page. You can do this through the Navigation settings page. On the navigation settings page click `New Link` at the top. Enter a Title for your navigation node (we used `Custom Search`), and in the link section put `/View/CustomSearch/#/` and make sure `Open In Same Window` is selected. You may select an icon of your choice (we used `search`). Last, mark the node as visible and either `Public` or provide an Active Directory group that you would like the navigation node to be available to.
+
+Finally, copy the CustomSearch folder from the _install directory to your CustomSpace folders root. This will install the latest compiled version of the code.
 
 If you'd like to install the latest source version of the code you can compile it yourself using the Angular CLI
 
 ## Build
 
-Run `ng build --deploy-url=../../customspace/customsearch/` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build --deploy-url=../../customspace/customsearch/` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Further help
 
