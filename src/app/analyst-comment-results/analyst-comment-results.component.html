@@ -2,11 +2,23 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <!-- Default panel contents -->
-      <div class="panel-heading">Top 10 Results</div>
-    
+      <div class="panel-heading">
+        <span>Results <small>{{take > total ? total : take}} of {{total}}</small></span>
+        <div class="form-group pull-right">
+          <select class="form-control" [formControl]="takeControl" id="take" value="{{take}}">
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+              <option>100</option>
+            </select>
+        </div>
+      </div>
+
       <!-- Table -->
       <table class="table table-hover">
-        <tr *ngIf="!data || data.length === 0"><td>No Results</td></tr>
+        <tr *ngIf="total === 0">
+          <td>No Results</td>
+        </tr>
         <tr *ngFor="let comment of data" (click)="onClick(comment.WorkItemId)">
           <td>{{comment.WorkItemId}}</td>
           <td>{{comment.Comment}}</td>
@@ -14,6 +26,10 @@
           <td>{{comment.EnteredDate}}</td>
         </tr>
       </table>
+
+      <!-- <div class="panel-footer">
+          <ngb-pagination [collectionSize]="total" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+      </div> -->
     </div>
   </div>
 </div>
