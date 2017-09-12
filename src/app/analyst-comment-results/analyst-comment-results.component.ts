@@ -19,10 +19,7 @@ export class AnalystCommentResultsComponent implements OnInit, OnChanges {
   constructor(protected service: CommentService, protected router: Router) { }
 
   private loadComments(term: string): void {
-    this.service.getAnalystComments(term, this.take, this.skip).subscribe(x => {
-      console.log(x);
-      this.data = x;
-    }, err => console.log(err));
+    this.service.getAnalystComments(term, this.take, this.skip).subscribe(x => this.data = x, err => console.log(err));
   }
 
   ngOnInit() {
