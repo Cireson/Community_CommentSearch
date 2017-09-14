@@ -8,7 +8,7 @@ This search currently provides an example of how to build a custom search page, 
 
 ## Development server
 
-Run `ng build --watch --output-path=../../Inetpub/CiresonPortal/CustomSpace/CustomSearch --deploy-url=../../customspace/customsearch/` using the Angular CLI from the repository source folder to recompile the code and output it into your Portal Custom Space. This will also watch the code while running and recompile anytime changes are made to the source code.
+Run `ng build --watch --output-path=../../Inetpub/CiresonPortal/CustomSpace/CustomSearch` using the Angular CLI from the repository source folder to recompile the code and output it into your Portal Custom Space. This will also watch the code while running and recompile anytime changes are made to the source code.
 
 NOTE: The command above assumes the source code / project is in the `c:\Source\CustomSearch` folder on the same server as the Portal installation. You may need to change the output-path command to suit your needs.
 
@@ -26,7 +26,7 @@ If you'd like to install the latest source version of the code you can compile i
 
 ## Build
 
-Run `ng build --deploy-url=../../customspace/customsearch/` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Further help
 
