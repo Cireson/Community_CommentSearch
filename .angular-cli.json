@@ -6,7 +6,8 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "_install/CustomSearch",
+      "deployUrl": "../../customspace/customsearch/",
       "assets": [
         "assets",
         "favicon.ico"
