@@ -12,12 +12,17 @@
     </div>
   </div>
   <table class="table table-hover">
-    <tr *ngIf="total === 0">
-      <td>No Results</td>
-    </tr>
-    <tr *ngFor="let comment of data" (click)="onClick(comment.WorkItemId)">
-      <td *ngFor="let key of columns">{{comment[key]}}</td>
-    </tr>
+    <thead>
+      <th *ngFor="let key of columns">{{key}}</th>
+    </thead>
+    <tbody>
+      <tr *ngIf="total === 0">
+        <td colspan="100">No Results</td>
+      </tr>
+      <tr *ngFor="let comment of data" (click)="onClick(comment.WorkItemId)">
+        <td *ngFor="let key of columns">{{comment[key]}}</td>
+      </tr>
+    </tbody>
   </table>
 
   <div class="panel-footer">
