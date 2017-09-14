@@ -1,22 +1,19 @@
-import { FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { CommentService } from '../shared/comment.service';
 import { Router } from '@angular/router';
-import { CommentService } from './../shared/comment.service';
-import { AnalystComment } from './../shared/comment.model';
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-analyst-comment-results',
-  templateUrl: './analyst-comment-results.component.html',
-  styleUrls: ['./analyst-comment-results.component.css']
+  selector: 'app-user-comment-results',
+  templateUrl: './user-comment-results.component.html',
+  styleUrls: ['./user-comment-results.component.css']
 })
-export class AnalystCommentResultsComponent {
+export class UserCommentResultsComponent {
   term: string;
 
   data: [any];
   columns = [
     'WorkItemId',
     'Comment',
-    'IsPrivate',
     'EnteredBy',
     'EnteredDate'
   ];
@@ -25,10 +22,10 @@ export class AnalystCommentResultsComponent {
   page = 1;
   total = 0;
 
-  constructor(protected service: CommentService, protected router: Router) {}
+  constructor(protected service: CommentService, protected router: Router) { }
 
   private loadComments(): void {
-    this.service.getAnalystComments(this.term, this.take, this.skip).subscribe(x => {
+    this.service.getUserComments(this.term, this.take, this.skip).subscribe(x => {
       this.data = x;
       this.total = x && x[0] && x[0].Total ? x[0].Total : 0;
     }, err => console.log(err));

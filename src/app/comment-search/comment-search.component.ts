@@ -1,0 +1,19 @@
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'app-comment-search',
+  templateUrl: './comment-search.component.html',
+  styleUrls: ['./comment-search.component.css']
+})
+export class CommentSearchComponent {
+  @Output() searchChange = new EventEmitter();
+  searchControl = new FormControl();
+
+  constructor() {
+    this.searchControl.valueChanges
+      .debounceTime(400)
+      .distinctUntilChanged()
+      .subscribe(v => this.searchChange.emit(v));
+   }
+}
