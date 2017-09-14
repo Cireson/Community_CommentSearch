@@ -27,7 +27,7 @@ export class AnalystCommentResultsComponent implements OnInit, OnChanges {
       .debounceTime(200)
       .distinctUntilChanged()
       .subscribe(v => {
-        this.take = v;
+        this.take = Number(v);
         this.loadComments();
       });
   }
@@ -53,5 +53,10 @@ export class AnalystCommentResultsComponent implements OnInit, OnChanges {
 
   onClick(id: string) {
     window.location.href = '/Incident/Edit/' + id;
+  }
+
+  onPageChange(page: number) {
+    this.skip = (this.take * page) - this.take;
+    this.loadComments();
   }
 }

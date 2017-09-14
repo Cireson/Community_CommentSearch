@@ -3,13 +3,13 @@
     <div class="panel panel-default">
       <!-- Default panel contents -->
       <div class="panel-heading">
-        <span>Results <small>{{take > total ? total : take}} of {{total}}</small></span>
+        <span>Results <small>{{skip}} through {{(skip + take) > total ? total : (skip + take)}} of {{total}}</small></span>
         <div class="form-group pull-right">
           <select class="form-control" [formControl]="takeControl" id="take" value="{{take}}">
-              <option>10</option>
-              <option>25</option>
-              <option>50</option>
-              <option>100</option>
+              <option value="10" selected="selected">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
             </select>
         </div>
       </div>
@@ -27,9 +27,9 @@
         </tr>
       </table>
 
-      <!-- <div class="panel-footer">
-          <ngb-pagination [collectionSize]="total" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
-      </div> -->
+      <div class="panel-footer">
+          <ngb-pagination [collectionSize]="total" [(page)]="page" [pageSize]="take" [maxSize]="10" (pageChange)="onPageChange($event)" aria-label="Default pagination"></ngb-pagination>
+      </div>
     </div>
   </div>
 </div>
