@@ -1,5 +1,5 @@
 {
-    "Id": "CustomSearch.js",
+    "Id": "CommentSearch.js",
     "layoutType": "semantic",
     "pageTitle": "",
     "view": {
@@ -11,7 +11,7 @@
 					{
 						"cssClass": "col-md-12",
 						"type": "viewPanel",
-						"ViewPanelId": "CustomSearch-vp.js"
+						"ViewPanelId": "CommentSearch-vp.js"
 					}
                 ]
             }
