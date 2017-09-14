@@ -1,3 +1,12 @@
-<p>
-  user-comment-results works!
-</p>
+<app-comment-search (searchChange)="onSearchChange($event)"></app-comment-search>
+<br>
+<app-comment-results-grid 
+  [data]="data"
+  [columns]="columns"
+  [total]="total"
+  [page]="page"
+  [pageSize]="take"
+  [maxSize]="10"
+  (pageChanged)="onPageChanged($event)"
+  (pageSizeChanged)="onPageSizeChanged($event)">
+</app-comment-results-grid>

@@ -29,4 +29,22 @@ export class CommentService {
       .map((res: Response) => res.json())
       .catch(err => Observable.throw(err));
   }
+
+  getUserComments(searchTerm: string, take: number, skip: number): Observable<any> {
+    const queryId = 'cd3141d1-001c-4f95-a3d7-fc5de63cd385';
+
+    // tslint:disable-next-line:max-line-length
+    return this.http
+      .get(`/api/v3/Dashboard/GetDashboardDataById`, {
+        params: {
+          dateFilterType: 'NoFilter',
+          searchTerm: searchTerm,
+          take: take,
+          skip: skip,
+          queryId: queryId
+        }
+      })
+      .map((res: Response) => res.json())
+      .catch(err => Observable.throw(err));
+  }
 }

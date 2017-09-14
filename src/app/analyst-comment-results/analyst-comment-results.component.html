@@ -1,35 +1,12 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <!-- Default panel contents -->
-      <div class="panel-heading">
-        <span>Results <small>{{skip}} through {{(skip + take) > total ? total : (skip + take)}} of {{total}}</small></span>
-        <div class="form-group pull-right">
-          <select class="form-control" [formControl]="takeControl" id="take" value="{{take}}">
-              <option value="10" selected="selected">10</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-            </select>
-        </div>
-      </div>
-
-      <!-- Table -->
-      <table class="table table-hover">
-        <tr *ngIf="total === 0">
-          <td>No Results</td>
-        </tr>
-        <tr *ngFor="let comment of data" (click)="onClick(comment.WorkItemId)">
-          <td>{{comment.WorkItemId}}</td>
-          <td>{{comment.Comment}}</td>
-          <td>{{comment.EnteredBy}}</td>
-          <td>{{comment.EnteredDate}}</td>
-        </tr>
-      </table>
-
-      <div class="panel-footer">
-          <ngb-pagination [collectionSize]="total" [(page)]="page" [pageSize]="take" [maxSize]="10" (pageChange)="onPageChange($event)" aria-label="Default pagination"></ngb-pagination>
-      </div>
-    </div>
-  </div>
-</div>
+<app-comment-search (searchChange)="onSearchChange($event)"></app-comment-search>
+<br>
+<app-comment-results-grid 
+  [data]="data"
+  [columns]="columns"
+  [total]="total"
+  [page]="page"
+  [pageSize]="take"
+  [maxSize]="10"
+  (pageChanged)="onPageChanged($event)"
+  (pageSizeChanged)="onPageSizeChanged($event)">
+</app-comment-results-grid>

@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <span>Results <small>{{gridStartItemNumber}} through {{gridEndItemNumber}} of {{total}}</small></span>
+    <div class="form-group pull-right">
+      <select class="form-control" [formControl]="pageSizeControl" id="take" value="{{pageSize}}">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+    </div>
+  </div>
+  <table class="table table-hover">
+    <tr *ngIf="total === 0">
+      <td>No Results</td>
+    </tr>
+    <tr *ngFor="let comment of data" (click)="onClick(comment.WorkItemId)">
+      <td *ngFor="let key of columns">{{comment[key]}}</td>
+    </tr>
+  </table>
+
+  <div class="panel-footer">
+    <ngb-pagination [collectionSize]="total" [(page)]="page" [pageSize]="pageSize" [maxSize]="maxSize" (pageChange)="onPageChange($event)"
+      aria-label="Default pagination"></ngb-pagination>
+  </div>
+</div>
+<!-- Table -->

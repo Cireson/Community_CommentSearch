@@ -1,10 +1,13 @@
-import { AnalystCommentSearchComponent } from '../analyst-comment-search/analyst-comment-search.component';
+import { UserCommentResultsComponent } from './../user-comment-results/user-comment-results.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from '../app.component';
+import { AnalystCommentResultsComponent } from '../analyst-comment-results/analyst-comment-results.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'AnalystCommentSearch', pathMatch: 'full' },
-  { path: 'AnalystCommentSearch', component: AnalystCommentSearchComponent },
+  { path: '', redirectTo: 'AnalystComments', pathMatch: 'full' },
+  { path: 'AnalystComments', component: AnalystCommentResultsComponent },
+  { path: 'UserComments', component: UserCommentResultsComponent }
 ];
 
 @NgModule({

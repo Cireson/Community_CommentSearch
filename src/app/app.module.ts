@@ -10,16 +10,18 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { AnalystCommentSearchComponent } from './analyst-comment-search/analyst-comment-search.component';
 import { AnalystCommentResultsComponent } from './analyst-comment-results/analyst-comment-results.component';
 import { UserCommentResultsComponent } from './user-comment-results/user-comment-results.component';
+import { CommentSearchComponent } from './comment-search/comment-search.component';
+import { CommentResultsGridComponent } from './comment-results-grid/comment-results-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnalystCommentSearchComponent,
     AnalystCommentResultsComponent,
-    UserCommentResultsComponent
+    UserCommentResultsComponent,
+    CommentSearchComponent,
+    CommentResultsGridComponent
   ],
   imports: [
     BrowserModule,
