@@ -1,5 +1,5 @@
-import { AppRoutingModule } from './app.routing.module';
-import { CommentService } from './comment.service';
+import { AppRoutingModule } from './shared/app.routing.module';
+import { CommentService } from './shared/comment.service';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -12,12 +12,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AnalystCommentSearchComponent } from './analyst-comment-search/analyst-comment-search.component';
 import { AnalystCommentResultsComponent } from './analyst-comment-results/analyst-comment-results.component';
+import { UserCommentResultsComponent } from './user-comment-results/user-comment-results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnalystCommentSearchComponent,
-    AnalystCommentResultsComponent
+    AnalystCommentResultsComponent,
+    UserCommentResultsComponent
   ],
   imports: [
     BrowserModule,

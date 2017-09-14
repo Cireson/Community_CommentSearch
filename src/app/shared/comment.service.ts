@@ -1,4 +1,4 @@
-import { AnalystComment } from './shared/comment.model';
+import { AnalystComment } from './comment.model';
 import { Injectable } from '@angular/core';
 import { Http, Response, Request, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';

@@ -1,4 +1,4 @@
-import { AnalystCommentSearchComponent } from './analyst-comment-search/analyst-comment-search.component';
+import { AnalystCommentSearchComponent } from '../analyst-comment-search/analyst-comment-search.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,7 +10,6 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(appRoutes, {useHash: true})
-   // RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]
 })

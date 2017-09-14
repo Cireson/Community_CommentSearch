@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CommentService } from './../comment.service';
+import { CommentService } from './../shared/comment.service';
 import { AnalystComment } from './../shared/comment.model';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
