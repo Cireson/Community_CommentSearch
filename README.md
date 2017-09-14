@@ -8,9 +8,9 @@ This search currently provides an example of how to build a custom search page, 
 
 ## Development server
 
-Run `ng build --watch --output-path=../../Inetpub/CiresonPortal/CustomSpace/CustomSearch` using the Angular CLI from the repository source folder to recompile the code and output it into your Portal Custom Space. This will also watch the code while running and recompile anytime changes are made to the source code.
+Run `ng build --watch --output-path=../../Inetpub/CiresonPortal/CustomSpace/CommentSearch` using the Angular CLI from the repository source folder to recompile the code and output it into your Portal Custom Space. This will also watch the code while running and recompile anytime changes are made to the source code.
 
-NOTE: The command above assumes the source code / project is in the `c:\Source\CustomSearch` folder on the same server as the Portal installation. You may need to change the output-path command to suit your needs.
+NOTE: The command above assumes the source code / project is in the `c:\Source\CommentSearch` folder on the same server as the Portal installation. You may need to change the output-path command to suit your needs.
 
 ## Installation
 
@@ -18,7 +18,7 @@ To install the example, run the SQL script that is in the _install folder agains
 
 Then copy the views folder from the _install directory into your CustomSpace folders root (it may ask to overwrite the existing folder, but it won't overwrite the files in the folder).
 
-Next, you need to create a navigation node in the Portal to point to the new custom page. You can do this through the Navigation settings page. On the navigation settings page click `New Link` at the top. Enter a Title for your navigation node (we used `Custom Search`), and in the link section put `/View/CustomSearch/#/` and make sure `Open In Same Window` is selected. You may select an icon of your choice (we used `search`). Last, mark the node as visible and either `Public` or provide an Active Directory group that you would like the navigation node to be available to.
+Next, you need to create a navigation node in the Portal to point to the new custom page. You can do this through the Navigation settings page. On the navigation settings page click `New Link` at the top. Enter a Title for your navigation node (we used `Comment Search`), and in the link section put `/View/CommentSearch/#/` and make sure `Open In Same Window` is selected. You may select an icon of your choice (we used `search`). Last, mark the node as visible and either `Public` or provide an Active Directory group that you would like the navigation node to be available to.
 
 Finally, copy the CustomSearch folder from the _install directory to your CustomSpace folders root. This will install the latest compiled version of the code.
 

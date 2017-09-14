@@ -13,6 +13,9 @@ export class AppComponent {
   constructor(private router: Router, private route: ActivatedRoute) {
     this.router.events
       .filter((event) => event instanceof NavigationEnd)
-      .subscribe((d: NavigationEnd) => this.currentUrl = d.url);
+      .subscribe((d: NavigationEnd) => {
+        console.log(d);
+        this.currentUrl = d.urlAfterRedirects || d.url;
+      });
    }
 }
