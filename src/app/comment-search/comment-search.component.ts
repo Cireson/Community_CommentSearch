@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./comment-search.component.css']
 })
 export class CommentSearchComponent {
+  @Input() loading = false;
   @Output() searchChange = new EventEmitter();
   searchControl = new FormControl();
 

@@ -13,7 +13,7 @@ export class CommentResultsGridComponent implements OnInit, OnChanges {
   @Input() page: number;
   @Input() pageSize: number;
   @Input() maxSize: number;
-  
+
   @Output() pageChanged = new EventEmitter();
   @Output() pageSizeChanged = new EventEmitter();
 

@@ -15,7 +15,7 @@ export class AppComponent {
       .filter((event) => event instanceof NavigationEnd)
       .subscribe((d: NavigationEnd) => {
         console.log(d);
-        this.currentUrl = d.urlAfterRedirects || d.url;
+        this.currentUrl = d.urlAfterRedirects.split('?')[0];
       });
    }
 }
