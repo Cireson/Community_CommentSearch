@@ -1,10 +1,19 @@
-# CustomSearch
+# Comment Search
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
 It was designed as an example of how you can use the Cireson Service Manager Portal to build custom functionality, and extend the existing functionality of Service Manager.
 
-This search currently provides an example of how to build a custom search page, in this case targeting searches against the Analyst Action Log Comments.
+This search currently provides an example of how to build a custom search page, in this case targeting searches against the Analyst and User Action Log Comments.
+
+## Features
+
+- Integration into the Service Manager Portal.
+- Search within comment text, entered by user, and related work item for Incident user and analyst comments.
+- Search via URL parameters for User Comments and Analyst Comments (i.e. _/AnalystComments/pizza_ will perform an analyst comment search for _pizza_).
+- Supports paging.
+- Supports up to 100 items per page.
+- **Double click** to browse to the Incident related to the discovered action log entry.
 
 ## Development server
 
