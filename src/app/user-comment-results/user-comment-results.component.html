@@ -1,4 +1,4 @@
-<app-comment-search (searchChange)="onSearchChange($event)"></app-comment-search>
+<app-comment-search  [loading]="loading" (searchChange)="onSearchChange($event)"></app-comment-search>
 <br>
 <app-comment-results-grid 
   [data]="data"
@@ -6,7 +6,7 @@
   [total]="total"
   [page]="page"
   [pageSize]="take"
-  [maxSize]="10"
+  [maxSize]="5"
   (pageChanged)="onPageChanged($event)"
   (pageSizeChanged)="onPageSizeChanged($event)">
 </app-comment-results-grid>

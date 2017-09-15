@@ -6,8 +6,32 @@ import { AnalystCommentResultsComponent } from '../analyst-comment-results/analy
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'AnalystComments', pathMatch: 'full' },
-  { path: 'AnalystComments', component: AnalystCommentResultsComponent },
-  { path: 'UserComments', component: UserCommentResultsComponent }
+  {
+    path: 'AnalystComments',
+    children: [
+      {
+        path: '',
+        component: AnalystCommentResultsComponent
+      },
+      {
+        path: ':term',
+        component: AnalystCommentResultsComponent
+      }
+    ]
+  },
+  {
+    path: 'UserComments',
+    children: [
+      {
+        path: '',
+        component: UserCommentResultsComponent
+      },
+      {
+        path: ':term',
+        component: UserCommentResultsComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({
